@@ -5,22 +5,17 @@
 //  Created by nguyen.dinh.thach on 17/03/2021.
 //
 
-import Foundation
+import Fluent
+import Vapor
 
-final class Record: Model {
+final class Record: Model, Content {
     static let schema = "records"
     
     @ID(key: .id)
     var id: UUID?
     
-    @Field(key: "date")
-    var date: String
-    
-    @Field(key: "type")
-    var type: String
-    
-    @Field(key: "values")
-    var type: Array
+    @Field(key: "data")
+    var data: RecordData
     
     init() { }
     
