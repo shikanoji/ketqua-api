@@ -1,10 +1,17 @@
+//
+//  File.swift
+//  
+//
+//  Created by Nguyễn Đình Thạch on 18/03/2021.
+//
+
 import Fluent
 
-struct CreateTodo: Migration {
+struct CreateRecords: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
-        return database.schema("todos")
+        return database.schema("records")
             .id()
-            .field("title", .string, .required)
+            .field("data", RecordData, .required)
             .create()
     }
 
