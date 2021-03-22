@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-class RecordData: Mappable, Codable {
+class FirebaseRecordData: Mappable {
     var date: String?
     var special: String?
     var first: String?

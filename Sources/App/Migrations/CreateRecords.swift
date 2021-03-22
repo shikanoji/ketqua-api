@@ -11,7 +11,9 @@ struct CreateRecords: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("records")
             .id()
-            .field("data", RecordData, .required)
+            .field("date", .string, .required)
+            .field("type", .string, .required)
+            .field("values", .array(of: .string), .required)
             .create()
     }
 
